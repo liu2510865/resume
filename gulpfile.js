@@ -9,7 +9,7 @@ var server = gls.static('dist', 8000);
 /**************** Utility **********************/
 function highlight(str) {
   return str.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/`(.+?)`/g, '<strong>$1</strong>');
+      .replace(/`(.+?)`/g, '<strong>$1</strong>');
 }
 
 /******************* Jade to html ***********/
@@ -34,26 +34,26 @@ function getLocals() {
 
 gulp.task('jade', function() {
   return gulp.src('./src/jade/index.jade')
-    .pipe(plugins.jade({ locals: getLocals() }))
-    .pipe(gulp.dest('./dist/'));
+      .pipe(plugins.jade({ locals: getLocals() }))
+      .pipe(gulp.dest('./dist/'));
 });
 
 /************* less to css  ********************/
 var lessPath = [path.join(__dirname, 'src', 'less', 'includes'),
-                path.join(__dirname, 'src', 'less', 'components')];
+  path.join(__dirname, 'src', 'less', 'components')];
 
 function less2css(srcPath, destPath, debug) {
   if(!debug) {
     return gulp.src(srcPath)
-      .pipe(plugins.less({ paths: lessPath }))
-      .pipe(plugins.minifyCss({ compatibility: 'ie9' }))
-      .pipe(gulp.dest(destPath));
+        .pipe(plugins.less({ paths: lessPath }))
+        .pipe(plugins.minifyCss({ compatibility: 'ie9' }))
+        .pipe(gulp.dest(destPath));
   } else {
     return gulp.src(srcPath)
-      .pipe(plugins.sourcemaps.init())
-      .pipe(plugins.less({ paths: lessPath }))
-      .pipe(plugins.sourcemaps.write())
-      .pipe(gulp.dest(destPath));
+        .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.less({ paths: lessPath }))
+        .pipe(plugins.sourcemaps.write())
+        .pipe(gulp.dest(destPath));
   }
 }
 
@@ -70,13 +70,13 @@ gulp.task('less-debug', function() {
 /************** Static assets **************/
 gulp.task('static', function() {
   return gulp.src('./static/**/*', { base: 'static' })
-    .pipe(gulp.dest('./dist/static/'));
+      .pipe(gulp.dest('./dist/static/'));
 });
 
 /****************** Watch ****************/
 gulp.task('watch', ['server'], function() {
   gulp.watch(['./src/**/*.jade', './resume.json', './i18n/**/*.js'],
-             ['jade']);
+      ['jade']);
   gulp.watch('./static/**/*', ['static']);
   gulp.watch('./src/**/*.less', ['less-debug']);
   gulp.watch('./dist/**/*', function() {
@@ -99,7 +99,7 @@ gulp.task('preview', ['build-for-deploy', 'serve']);
 /****************** Deploy ****************/
 gulp.task('deploy', ['build-for-deploy'], function() {
   return gulp.src('./dist/**/*')
-    .pipe(plugins.ghPages());
+      .pipe(plugins.ghPages());
 });
 
 /****************** Default ****************/

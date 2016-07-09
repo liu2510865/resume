@@ -1,6 +1,6 @@
 module.exports = {
     experience_type: {
-        "internship": "（实习）"
+        "internship": ""
     },
     skill_type: {
         "frontend": "Web 前端",
@@ -8,7 +8,7 @@ module.exports = {
         "miscellaneous": "其他"
     },
     education_type: {
-        "undergraduate": "（本科）"
+        "undergraduate": ""
     },
     link_type: {
         "zhihu": "知乎",

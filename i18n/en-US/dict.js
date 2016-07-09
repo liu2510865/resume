@@ -1,6 +1,6 @@
 module.exports = {
     experience_type: {
-        "internship": "(internship)"
+        "internship": ""
     },
     skill_type: {
         "frontend": "Frontend Development",
@@ -8,7 +8,7 @@ module.exports = {
         "miscellaneous": "Miscellaneous"
     },
     education_type: {
-        "undergraduate": "(Bachelor's degree)"
+        "undergraduate": ""
     },
     link_type: {
         "zhihu": "Zhihu",

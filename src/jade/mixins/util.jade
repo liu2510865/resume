@@ -23,6 +23,9 @@ mixin qrcode(data)
 mixin wechat(data)
   li.contact-wechat&attributes(attributes)= data.id
 
+mixin qq(data)
+  li.contact-qq&attributes(attributes)= data.id
+
 mixin responsive(mixin_name, data, res_class)
   +#{mixin_name}(data)(class=res_class)
 

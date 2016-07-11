@@ -6,11 +6,14 @@
   "repo": "https://github.com/liu2510865/resume.git",
   "job_description": [".net软件工程师"],
   "contact": {
-    "email": "helloworldliu@hotmail.com",
+    "qq": {
+      "id": "343509217"
+    },
     "wechat": {
       "id": "helloworldliu",
       "qrcode": "static/wechat.png"
     },
+    "email": "helloworldliu@hotmail.com",
     "github": {
       "id": "liu2510865"
     },
